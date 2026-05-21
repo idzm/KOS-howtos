@@ -1,18 +1,18 @@
 # Quick start with **KOS** in **WSL** (**Ubuntu 24.04**) on **Windows** (**VS Code**)
 
-1. Run **WSL**:
+1. Запуск **WSL**:
 
 ```cmd
 wsl
 ```
 
-2. Download SDK KasperskyOS Community Edition QEMU 1.4:
+2. Скачивание **SDK KasperskyOS Community Edition QEMU 1.4**:
 
 ```sh
 curl -O "https://products.s.kaspersky-labs.com/special/KasperskyOSCommunityEdition/1.4.0.102/multilanguage-INT-1.4.0.102/df76b13a0f0c4eb7953d596b7ae0d29a/KasperskyOS-Community-Edition-Qemu-1.4.0.102_ru.deb"
 ```
 
-3. Install prerequisites (**libncurses5**, **libffi7**):
+3. Установка предварительных условий (**libncurses5**, **libffi7**):
 
 ```sh
 # Download only the required compatibility packages instead of adding
@@ -24,7 +24,7 @@ wget https://archive.ubuntu.com/ubuntu/pool/main/libf/libffi/libffi7_3.3-4_amd64
 sudo apt install ./libncurses5_6.2-0ubuntu2_amd64.deb ./libffi7_3.3-4_amd64.deb
 ```
 
-4. Install SDK KasperskyOS Community Edition QEMU 1.4:
+4. Установка **SDK KasperskyOS Community Edition QEMU 1.4**:
 
 ```sh
 sudo apt install ./KasperskyOS-Community-Edition-Qemu-1.4.0.102_ru.deb
