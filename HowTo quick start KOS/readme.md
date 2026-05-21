@@ -1,4 +1,4 @@
-# How to quick start with **KOS** in **WSL** (**Ubuntu 24.04**) on **Windows** (**VS Code**)
+# Quick start with **KOS** in **WSL** (**Ubuntu 24.04**) on **Windows** (**VS Code**)
 
 1. Run **WSL**:
 
@@ -15,22 +15,13 @@ curl -O "https://products.s.kaspersky-labs.com/special/KasperskyOSCommunityEditi
 3. Install prerequisites (**libncurses5**, **libffi7**):
 
 ```sh
-echo "deb http://security.ubuntu.com/ubuntu focal-security main universe" \
-| sudo tee /etc/apt/sources.list.d/ubuntu-focal-sources.list
-sudo apt update
-sudo apt install libncurses5
-```
+# Download only the required compatibility packages instead of adding
+# the full Ubuntu 20.04 repository to Ubuntu 24.04.
+wget http://archive.ubuntu.com/ubuntu/pool/universe/n/ncurses/libncurses5_6.2-0ubuntu2_amd64.deb
+wget https://archive.ubuntu.com/ubuntu/pool/main/libf/libffi/libffi7_3.3-4_amd64.deb
 
-
-```sh
-# 1. Download the libffi7 package from the Ubuntu archives
-wget http://archive.ubuntu.com/ubuntu/pool/main/libf/libffi/libffi7_3.3-4_amd64.deb
-
-# 2. Install the package using dpkg
-sudo dpkg -i libffi7_3.3-4_amd64.deb
-
-# 3. Fix any missing dependency issues by updating the package manager
-sudo apt-get install -f
+# Install the downloaded packages directly.
+sudo apt install ./libncurses5_6.2-0ubuntu2_amd64.deb ./libffi7_3.3-4_amd64.deb
 ```
 
 4. Install SDK KasperskyOS Community Edition QEMU 1.4:
